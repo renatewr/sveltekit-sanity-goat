@@ -11,30 +11,32 @@
   <title>Goatnbike</title>
 </svelte:head>
 
-<div class="main relative w-full bg-dark-400 min-h-screen px-4 pt-4 pb-20 sm:px-6 lg:px-24 lg:pt-1 lg:pb-28">
+<main class="main relative w-full bg-dark-400 min-h-screen px-4 pt-4 pb-20 sm:px-6 lg:px-32 lg:pt-1 lg:pb-28">
   <div class="relative mx-auto max-w-7xl">
     <div class="text-center">
       <div class="flex items-center justify-center w-full mb-0">
         <a href="https://www.goatnbike.com" target="_blank" rel="noreferrer noopener" class="group block flex-shrink-0">
           <div class="flex items-center text-left">
             <div>
-              <img class="inline-block h-60 w-60 rounded-full rounded-logo" src="/logo.svg" alt="Goatnbike logo" />
+              <img class="inline-block h-50 rounded-full rounded-logo" src="/logo.svg" alt="Goatnbike logo" />
             </div>
           </div>
         </a>
       </div>
-      <h1 class="text-3xl font-bold text-brand sm:text-3xl">MTB adventures in Oppdal, Norway - all year !</h1>
+    </div>
+
+    <div class="w-full mt-4">
+      <div class="relative mx-auto grid max-w-lg gap-1 lg:max-w-none grid-cols-5 py-2">
+      <h1 class="text-2xl font-bold text-brand md:text-2xl ">MTB adventures in Oppdal, Norway - all year !</h1>
       <a
           href="https://www.instagram.com/goatnbike/"
           title=""
           role="button"
-          class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold text-brand transition-all duration-200 border border-transparent hover:bg-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand"
+          aria-label="Link to instagram account"
+          class="instagram inline-flex items-center sm:justify-center px-4 py-2 text-sm font-bold text-brand transition-all duration-200 border border-transparent hover:bg-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand"
         >
         <i class="gg-instagram"></i>
-        </a>
-    </div>
-
-    <div class="w-full  mt-8">
+        </a></div>
       {#if posts && posts.length > 0}
         <div class="mx-auto grid max-w-lg gap-3 lg:max-w-none lg:grid-cols-3">
           {#each posts as post}
@@ -43,7 +45,7 @@
                 <div class="flex-shrink-0">
                  {#if post.coverImage}
                   <img
-                    class="h-58 w-full object-cover"
+                    class="h-72 w-full object-cover"
                     src={urlForImage(post.coverImage).crop("focalpoint").width(826).url()}
                     alt=""
                   />
@@ -94,7 +96,7 @@
       {/if}
     </div>
   </div>
-</div>
+</main>
 
 <style>
  .card {
@@ -104,7 +106,7 @@
 
 
 .main {
-    background: linear-gradient(0deg, rgba(45,62,96,1) 50%, rgba(255,255,255,1) 95%);
+    background: linear-gradient(0deg, rgba(45,62,96,1) 50%, rgba(215, 226, 238, 1) 95%);
   }
 
   .gg-instagram {
@@ -141,8 +143,17 @@
     right: 1px;
     top: 1px
 }
+.instagram {
+  grid-column-end: -1;
+  justify-self: end;
+}
 h1,h2, text-base {
   font-family: 'Inclusive Sans', sans-serif;
+}
+h1 {
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 5;
 }
 
 

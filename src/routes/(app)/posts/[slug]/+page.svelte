@@ -20,7 +20,7 @@
 <Header />
 
 {#if $postData?.post}
-  <div class="relative w-full bg-dark-400 min-h-screen px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
+  <div class="relative w-full bg-brand min-h-screen px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
     <div class="relative mx-auto max-w-2xl">
       <article class="w-full space-y-8">
         <div>
@@ -40,14 +40,14 @@
               />
             </div>
             {/if}
-            <div class="ml-3">
+            <!-- <div class="ml-3">
               <p class="text-sm font-medium text-white">{$postData.post.author.name}</p>
               <div class="flex space-x-1 text-sm text-gray-400">
                 <time datetime="2020-03-16">
                   {new Date($postData.post.date).toLocaleDateString()}
                 </time>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         {#if $postData.post.coverImage}

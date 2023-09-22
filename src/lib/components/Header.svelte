@@ -6,7 +6,7 @@
     <div class="flex items-center justify-between">
       <div class="shrink-0">
         <a href="/" title="" class="flex">
-          <img class="w-auto h-8" src="/logo.svg" alt="" />
+          <img class="w-auto h-8" src="/logo.svg" alt="Goatnbike logo" />
         </a>
       </div>
 
@@ -29,6 +29,7 @@
           href="https://www.instagram.com/goatnbike/"
           title=""
           role="button"
+          aria-label="link ti instagram account"
           class="inline-flex items-center justify-center px-4 py-2 text-sm font-bold text-brand transition-all duration-200 border border-transparent hover:bg-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand"
         >
         <i class="gg-instagram"></i>
