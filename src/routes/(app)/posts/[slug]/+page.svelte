@@ -4,6 +4,8 @@
   import { urlForImage } from "$lib/config/sanity";
   import type { PageData } from "./$types";
   import Header from "$lib/components/Header.svelte";
+  import {PortableText} from '@portabletext/svelte'
+  import Body from '$lib/components/Body.svelte'
   export let data: PageData;
 
   $: ({ initialData, previewMode, slug } = data);
@@ -58,9 +60,16 @@
         />
         {/if}
         <p class="mt-3 text-base">
-          
           {$postData.post.postContent}
         </p>
+        <PortableText
+  value={$postData.post.body}
+  components={{
+    marks: {
+      body: Body
+    }
+  }}
+/>
       </article>
     </div>
   </div>

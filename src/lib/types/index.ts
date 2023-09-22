@@ -1,6 +1,7 @@
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 export interface Post {
+  body: any;
 	_id: string;
 	name: string;
 	title: string;
