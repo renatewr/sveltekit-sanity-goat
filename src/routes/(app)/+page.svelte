@@ -18,7 +18,7 @@
         <a href="https://www.goatnbike.com" target="_blank" rel="noreferrer noopener" class="group block flex-shrink-0">
           <div class="flex items-center text-left">
             <div>
-              <img class="inline-block h-50 rounded-full rounded-logo" src="/logo.svg" alt="Goatnbike logo" />
+              <img class="inline-block sm:h-40 h-30 rounded-full rounded-logo" src="/logo.svg" alt="Goatnbike logo" />
             </div>
           </div>
         </a>
