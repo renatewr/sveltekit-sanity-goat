@@ -9,6 +9,7 @@ const postFields = groq`
   coverImage,
   "slug": slug.current,
   "author": author->{name, picture},
+  body,
 `;
 
 export const settingsQuery = groq`*[_type == "settings"][0]{title}`;
