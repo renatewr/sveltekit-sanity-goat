@@ -55,7 +55,30 @@ export default defineType({
 			name: 'body',
 			title: 'Body',
 			type: 'array',
-			of: [{type: 'block'},{ type: "instagram" }, { type: 'image' },
+			of: [
+				{ type: 'block'},
+				{ type: 'image',
+				options: {
+					hotspot: true // <-- Defaults to false
+				},
+				fields: [
+				{
+					name: 'alt',
+					type: 'string',
+					title: 'Alternative text (for screen readers)',
+				},
+				{
+				  name: 'caption',
+				  type: 'string',
+				  title: 'Caption',
+				},
+				{
+				  name: 'attribution',
+				  type: 'string',
+				  title: 'Attribution',
+				}
+			  ]
+			 },
 			{ type: 'videoAnimation' }]
 		},
 		{

@@ -67,17 +67,17 @@
   }}
   
 />
-{#if $postData.post.author}
-<div class="flex-shrink-0">
+  {#if $postData.post.author}
+  <div class="flex-shrink-0">
   <span class="sr-only">Image</span>
-  <img
-    class="h-10 w-10 rounded-full"
-    src={urlForImage($postData.post.author.picture).crop("focalpoint").width(256).height(256).url()}
-    alt=""
-  />
-</div>
-{/if}
-      </article>
+    <img
+      class="h-10 w-10 rounded-full"
+      src={urlForImage($postData.post.author.picture).crop("focalpoint").width(256).height(256).url()}
+      alt=""
+    />
+  </div>
+  {/if}
+  </article>
     </div>
   </div>
 {/if}
