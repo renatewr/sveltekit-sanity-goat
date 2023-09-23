@@ -5,7 +5,6 @@
   const projectId = import.meta.env.VITE_SANITY_PROJECT_ID;
   const dataset = import.meta.env.VITE_SANITY_DATASET;
   const {muted, caption}  = portableText.value.muted;
-  const controls = muted ? false: true;
   const [_file, id, extension] = portableText.value.fallback.asset._ref.split('-');
 
   export let fileUrl  = buildFileUrl({assetId: id, projectId, dataset,extension});
@@ -22,7 +21,7 @@
   title="{caption}" 
   muted 
   playsInline 
-  {controls}
+  controls
   autoplay 
   loop
   src={fileUrl}
