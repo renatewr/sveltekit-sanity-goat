@@ -28,6 +28,7 @@ export default {
         name: 'caption',
         title: 'Caption',
         type: 'string',
+        required: true,
         options: {
           isHighlighted: true
         }
@@ -39,6 +40,10 @@ export default {
         options: {
           isHighlighted: true
         }
+      },
+      { name: 'muted',
+        title: 'Mute this video',
+        type: 'boolean',
       }
     ]
   }

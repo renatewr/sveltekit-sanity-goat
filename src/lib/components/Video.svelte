@@ -4,8 +4,12 @@
 	export let portableText;
   const projectId = import.meta.env.VITE_SANITY_PROJECT_ID;
   const dataset = import.meta.env.VITE_SANITY_DATASET;
+  const {muted, caption}  = portableText.value.muted;
+  const controls = muted ? false: true;
   const [_file, id, extension] = portableText.value.fallback.asset._ref.split('-');
-    let fileUrl = buildFileUrl({assetId: id, projectId, dataset,extension});
+
+  export let fileUrl  = buildFileUrl({assetId: id, projectId, dataset,extension});
+    
     
     // These values are bound to properties of the video
 	
@@ -15,13 +19,17 @@
 <div>
 	{#if fileUrl}
 <video
-  title={""} muted playsInline controls autoplay loop
+  title="{caption}" 
+  muted 
+  playsInline 
+  {controls}
+  autoplay 
+  loop
   src={fileUrl}
   >
   <!-- <source data-src={portableText.value.webmAsset.url} type={`video/${portableText.value.webmAsset.extension}`} /> -->
-  <source data-src={fileUrl} type={`video/mp4`} />
-
-</video>
+    <source data-src={fileUrl} type={`video/mp4`} />
+  </video>
 {/if}
 </div>
 
