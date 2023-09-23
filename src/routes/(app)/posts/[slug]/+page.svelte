@@ -25,7 +25,7 @@
 <Header />
 
 {#if $postData?.post}
-  <div class="relative w-full bg-white min-h-screen px-4 pt-4 pb-20 sm:px-6 lg:px-8 lg:pt-8 lg:pb-28">
+  <div class="relative w-full bg-white min-h-screen px-4 pt-2 pb-20 sm:px-6 lg:px-8 lg:pb-28">
     <div class="relative mx-auto max-w-2xl">
       <article class="w-full space-y-2 text-brand text-4lg">
         <div>
