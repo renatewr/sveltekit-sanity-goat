@@ -4,8 +4,9 @@
   import { urlForImage } from "$lib/config/sanity";
   import type { PageData } from "./$types";
   import Header from "$lib/components/Header.svelte";
-  import {PortableText} from '@portabletext/svelte'
-  import Body from '$lib/components/Body.svelte'
+  import {PortableText} from '@portabletext/svelte';
+  import Body from '$lib/components/Body.svelte';
+  import Video from '$lib/components/Video.svelte';
   export let data: PageData;
 
   $: ({ initialData, previewMode, slug } = data);
@@ -22,26 +23,15 @@
 <Header />
 
 {#if $postData?.post}
-  <div class="relative w-full bg-brand min-h-screen px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
+  <div class="relative w-full bg-white min-h-screen px-4 pt-4 pb-20 sm:px-6 lg:px-8 lg:pt-8 lg:pb-28">
     <div class="relative mx-auto max-w-2xl">
-      <article class="w-full space-y-8">
+      <article class="w-full space-y-4 text-brand text-4lg">
         <div>
-          <a href="/" class="hover:underline font-bold text-sm text-white">← Back to home</a>
+          <a href="/" class="hover:underline font-bold text-sm text-brand">← Back to home</a>
         </div>
-
         <div>
-          <h1 class="text-4xl font-bold">{$postData.post.title}</h1>
+          <h1 class="text-4xl font-bold text-brand">{$postData.post.title}</h1>
           <div class="mt-3 flex items-center">
-            {#if $postData.post.author}
-            <div class="flex-shrink-0">
-              <span class="sr-only">Image</span>
-              <img
-                class="h-10 w-10 rounded-full"
-                src={urlForImage($postData.post.author.picture).crop("focalpoint").width(256).height(256).url()}
-                alt=""
-              />
-            </div>
-            {/if}
             <!-- <div class="ml-3">
               <p class="text-sm font-medium text-white">{$postData.post.author.name}</p>
               <div class="flex space-x-1 text-sm text-gray-400">
@@ -59,17 +49,29 @@
           alt=""
         />
         {/if}
-        <p class="mt-3 text-base">
+        <p class="mt-3 text-base text-brand">
           {$postData.post.postContent}
         </p>
         <PortableText
   value={$postData.post.body}
   components={{
     marks: {
-      body: Body
+      body: Body,
+      videoAnimation: Video,
     }
   }}
+  
 />
+{#if $postData.post.author}
+<div class="flex-shrink-0">
+  <span class="sr-only">Image</span>
+  <img
+    class="h-10 w-10 rounded-full"
+    src={urlForImage($postData.post.author.picture).crop("focalpoint").width(256).height(256).url()}
+    alt=""
+  />
+</div>
+{/if}
       </article>
     </div>
   </div>

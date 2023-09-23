@@ -11,6 +11,8 @@ import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash';
 /*-------------- SCHEMAS --------------*/
 import authorType from '$lib/config/sanity/schemas/author';
 import postType from '$lib/config/sanity/schemas/post';
+import instagramType from '$lib/config/sanity/schemas/instagram';
+import videoAnimationType from '$lib/config/sanity/schemas/video'
 /*------------------------------------*/
 
 export default defineConfig({
@@ -20,7 +22,7 @@ export default defineConfig({
 	title: app.appName + ' - Studio',
 	schema: {
 		// If you want more content types, you can add them to this array
-		types: [ postType, authorType]
+		types: [ postType, authorType, instagramType, videoAnimationType]
 	},
 	plugins: [
 		deskTool({

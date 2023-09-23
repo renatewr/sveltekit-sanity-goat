@@ -27,7 +27,7 @@
 
     <div class="w-full mt-4">
       <div class="relative mx-auto grid max-w-lg gap-1 lg:max-w-none grid-cols-5 py-2">
-      <h1 class="text-2xl font-bold text-brand md:text-2xl ">MTB adventures in Oppdal, Norway - all year !</h1>
+      <h1 class="text-2lg font-bold text-brand md:text-2xl ">MTB adventures in Oppdal, Norway - all year!</h1>
       <a
           href="https://www.instagram.com/goatnbike/"
           title=""
