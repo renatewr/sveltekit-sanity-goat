@@ -51,22 +51,23 @@
           alt=""
         />
         {/if}
+        <div class="space-y-4">
         <p class="mt-3 text-base text-brand">
           {$postData.post.postContent}
         </p>
         <PortableText
-  value={$postData.post.body}
-  components={{
-    types: {
-      image: Image,
-      videoAnimation: Video,
-    },
-    marks: {
-      body: Body,
-    }
-  }}
-  
-/>
+          value={$postData.post.body}
+          components={{
+          types: {
+            image: Image,
+            videoAnimation: Video,
+          },
+          marks: {
+            body: Body,
+          }
+      }}
+    />
+    </div>
   {#if $postData.post.author}
   <div class="flex-shrink-0">
   <span class="sr-only">Image</span>
@@ -81,3 +82,13 @@
     </div>
   </div>
 {/if}
+
+<style>
+  article, p {
+    font-family: 'Inclusive Sans', sans-serif;
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  </style>
