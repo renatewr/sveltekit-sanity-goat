@@ -7,6 +7,8 @@
   import {PortableText} from '@portabletext/svelte';
   import Body from '$lib/components/Body.svelte';
   import Video from '$lib/components/Video.svelte';
+  import Image from '$lib/components/Image.svelte';
+  
   export let data: PageData;
 
   $: ({ initialData, previewMode, slug } = data);
@@ -25,7 +27,7 @@
 {#if $postData?.post}
   <div class="relative w-full bg-white min-h-screen px-4 pt-4 pb-20 sm:px-6 lg:px-8 lg:pt-8 lg:pb-28">
     <div class="relative mx-auto max-w-2xl">
-      <article class="w-full space-y-4 text-brand text-4lg">
+      <article class="w-full space-y-2 text-brand text-4lg">
         <div>
           <a href="/" class="hover:underline font-bold text-sm text-brand">← Back to home</a>
         </div>
@@ -55,9 +57,12 @@
         <PortableText
   value={$postData.post.body}
   components={{
+    types: {
+      image: Image,
+      videoAnimation: Video,
+    },
     marks: {
       body: Body,
-      videoAnimation: Video,
     }
   }}
   
