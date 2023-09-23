@@ -12,6 +12,7 @@
 </svelte:head>
 
 <main class="main relative w-full bg-dark-400 min-h-screen px-4 pt-4 pb-20 sm:px-6 lg:px-32 lg:pt-1 lg:pb-28">
+  
   <div class="relative mx-auto max-w-7xl">
     <div class="text-center">
       <div class="flex items-center justify-center w-full mb-0">
@@ -156,6 +157,5 @@ h1 {
   grid-column-start: 1;
   grid-column-end: 5;
 }
-
 
   </style>
