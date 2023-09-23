@@ -2,6 +2,7 @@ import { BookIcon } from '@sanity/icons';
 import { defineType } from 'sanity';
 
 import authorType from './author';
+import instagram from "./instagram";
 
 /**
  * This file is the schema definition for a post.
@@ -54,7 +55,31 @@ export default defineType({
 			name: 'body',
 			title: 'Body',
 			type: 'array',
-			of: [{type: 'block'}]
+			of: [
+				{ type: 'block'},
+				{ type: 'image',
+				options: {
+					hotspot: true // <-- Defaults to false
+				},
+				fields: [
+				{
+					name: 'alt',
+					type: 'string',
+					title: 'Alternative text (for screen readers)',
+				},
+				{
+				  name: 'caption',
+				  type: 'string',
+				  title: 'Caption',
+				},
+				{
+				  name: 'attribution',
+				  type: 'string',
+				  title: 'Attribution',
+				}
+			  ]
+			 },
+			{ type: 'videoAnimation' }]
 		},
 		{
 			name: 'date',
