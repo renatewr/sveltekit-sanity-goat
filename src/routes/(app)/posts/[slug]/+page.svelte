@@ -46,8 +46,9 @@
         </div>
         {#if $postData.post.coverImage}
         <img
-          class="h-150 w-full object-cover rounded-xl mb-10"
-          src={urlForImage($postData.post.coverImage).crop("focalpoint").width(1344).url()}
+          class="h-80 md:h-150 lg:h-150 w-full object-cover rounded-xl mb-10"
+          src={urlForImage($postData.post.coverImage).crop("focalpoint").auto('format')
+          .fit('max').width(980).url()}
           alt=""
         />
         {/if}
